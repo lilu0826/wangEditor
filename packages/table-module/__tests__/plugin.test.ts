@@ -39,7 +39,7 @@ describe('TableModule module', () => {
       const mockFn = jest.fn()
       slate.Editor.insertText = mockFn
 
-      newEditor.insertData({ getData: () => 'test' } as unknown as DataTransfer)
+      newEditor.insertData(({ getData: () => 'test' } as unknown) as DataTransfer)
 
       expect(mockFn).toBeCalled()
     })

@@ -110,7 +110,7 @@ describe('Video module helper', () => {
         },
       })
 
-      await uploadVideos(editor, [new File(['123'], 'test.png')] as unknown as FileList)
+      await uploadVideos(editor, ([new File(['123'], 'test.png')] as unknown) as FileList)
 
       expect(fn).toBeCalled()
     })
@@ -138,7 +138,7 @@ describe('Video module helper', () => {
         },
       })
 
-      await uploadVideos(editor, [new File(['test123'], 'foo.jpg')] as unknown as FileList)
+      await uploadVideos(editor, ([new File(['test123'], 'foo.jpg')] as unknown) as FileList)
 
       expect(fn).toBeCalled()
     })
@@ -169,7 +169,7 @@ describe('Video module helper', () => {
       const mockShowProgressBar = jest.fn()
       editor.showProgressBar = mockShowProgressBar
 
-      await uploadVideos(editor, [new File(['test123'], 'foo.jpg')] as unknown as FileList)
+      await uploadVideos(editor, ([new File(['test123'], 'foo.jpg')] as unknown) as FileList)
 
       expect(mockOnProgress).toBeCalled()
       expect(mockShowProgressBar).toBeCalled()
@@ -198,9 +198,11 @@ describe('Video module helper', () => {
         },
       })
 
-      uploadVideos(editor, [new File(['test123'], 'foo.jpg')] as unknown as FileList).catch(() => {
-        expect(fn).toBeCalled()
-      })
+      uploadVideos(editor, ([new File(['test123'], 'foo.jpg')] as unknown) as FileList).catch(
+        () => {
+          expect(fn).toBeCalled()
+        }
+      )
     })
 
     test('it should invoke onFail callback if upload result with error', async () => {
@@ -226,7 +228,7 @@ describe('Video module helper', () => {
         },
       })
 
-      await uploadVideos(editor, [new File(['test123'], 'foo.jpg')] as unknown as FileList)
+      await uploadVideos(editor, ([new File(['test123'], 'foo.jpg')] as unknown) as FileList)
 
       expect(fn).toBeCalled()
     })
@@ -254,7 +256,7 @@ describe('Video module helper', () => {
         },
       })
 
-      await uploadVideos(editor, [new File(['test123'], 'foo.jpg')] as unknown as FileList)
+      await uploadVideos(editor, ([new File(['test123'], 'foo.jpg')] as unknown) as FileList)
 
       expect(fn).toBeCalled()
     })

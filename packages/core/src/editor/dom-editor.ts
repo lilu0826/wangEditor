@@ -469,7 +469,7 @@ export const DomEditor = {
       range = Editor.unhangRange(editor, range, { voids: true })
     }
 
-    return range as unknown as T extends true ? Range | null : Range
+    return (range as unknown) as T extends true ? Range | null : Range
   },
 
   /**

@@ -28,10 +28,10 @@ function genParser<T>(level: number) {
       children = [{ text: $elem.text().replace(/\s+/gm, ' ') }]
     }
 
-    const headerNode = {
+    const headerNode = ({
       type: `header${level}`,
       children,
-    } as unknown as T
+    } as unknown) as T
 
     return headerNode
   }

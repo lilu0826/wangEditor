@@ -26,7 +26,7 @@ describe('Upload image menu upload files util', () => {
       },
     })
 
-    await uploadImages(editor, [mockFile('test.jpg')] as unknown as FileList)
+    await uploadImages(editor, ([mockFile('test.jpg')] as unknown) as FileList)
 
     expect(fn).toBeCalled()
   })
@@ -46,7 +46,7 @@ describe('Upload image menu upload files util', () => {
 
     const mockReadAsDataURL = jest.spyOn(FileReader.prototype, 'readAsDataURL')
 
-    await uploadImages(editor, [mockFile('test.jpg')] as unknown as FileList)
+    await uploadImages(editor, ([mockFile('test.jpg')] as unknown) as FileList)
 
     expect(mockReadAsDataURL).toBeCalled()
   })
@@ -64,7 +64,7 @@ describe('Upload image menu upload files util', () => {
 
     jest.spyOn(core, 'createUploader').mockImplementation(fn)
 
-    await uploadImages(editor, [mockFile('test.jpg')] as unknown as FileList)
+    await uploadImages(editor, ([mockFile('test.jpg')] as unknown) as FileList)
 
     expect(fn).toBeCalled()
   })

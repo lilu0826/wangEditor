@@ -15,7 +15,9 @@ import { promiseResolveThen } from '../../utils/util'
  * 获取 textContainer 尺寸和定位
  * @param editor editor
  */
-export function getTextContainerRect(editor: IDomEditor): {
+export function getTextContainerRect(
+  editor: IDomEditor
+): {
   top: number
   left: number
   width: number

@@ -34,7 +34,7 @@ describe('uploader', () => {
         onFailed: (file, res) => {},
         onError: (file, err, res) => {},
       } as IUploadConfig)
-    } catch (err: unknown) {
+    } catch (err) {
       expect((err as Error).message).toBe('Cannot get upload server address\n没有配置上传地址')
     }
   })
@@ -48,7 +48,7 @@ describe('uploader', () => {
         onFailed: (file, res) => {},
         onError: (file, err, res) => {},
       } as IUploadConfig)
-    } catch (err: unknown) {
+    } catch (err) {
       expect((err as Error).message).toBe('Cannot get fieldName\n没有配置 fieldName')
     }
   })

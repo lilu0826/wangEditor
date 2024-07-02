@@ -27,5 +27,5 @@ export interface IUploadConfig {
   onSuccess: (file: UppyFile<{}, {}>, response: any) => void
   onProgress?: (progress: number) => void
   onFailed: (file: UppyFile<{}, {}>, response: any) => void
-  onError: (file: UppyFile<{}, {}>, error: any, res: any) => void
+  onError: (file: UppyFile<{}, {}> | any, error: any, res: any) => void
 }
